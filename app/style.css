@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600&display=swap');
+
+html,body,* {
+     font-family: 'Cairo', sans-serif !important;
+  
+}
+
+a {
+     text-decoration: none;
+}
+
+
+label {
+    color: rgb(193, 194, 197) !important; 
+}
+
+
+.mantine-Paper-root .mantine-15j20o2 {
+     margin-top: 1rem;
+     background-color: #fff ;
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+     color: #000 !important;
+}
+.MuiInputBase-input .MuiOutlinedInput-input .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+     color: #000 !important;
+
+}
+
+.mantine-glwbmn {
+     color: #f7f7f79e !important;
+}
+.mantine-15j1ikw {
+     color: #fff !important;
+}
+.mantine-15j1ikw[data-invalid] {
+     border: #e03131 !important;
+ 
+ }
+ input:invalid {
+     outline: none !important;
+ }
+.active {
+     background:#FB2576 !important;
+     color: #fff !important;
+}
+.swiper-overflow-container {
+     overflow-x: hidden !important; /* prevent horizontal scroll */
+ }
+ .mantine-2lboma{
+     width: 100% !important;
+ }
+.ContentBody img {
+     display: none;
+}
+.mantine-Center-root, .mantine-141hknd {
+    overflow: unset !important;
+}
+.mantine-5ihdl7 {
+     background-color: #222 !important;
+}
+.Notification_Container {
+     transition: all .2s ease-in-out;
+}
+.Notification_Container:hover {
+     background-color: #333;
+
+}
+.mantine-4wjohz,  .mantine-PasswordInput-innerInput  {
+     color: #fff !important;
+}
+ 

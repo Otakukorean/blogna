@@ -1,27 +1,24 @@
 "use client";
 import { Flex } from '@mantine/core';
 
-import PostCard from './components/PostCard/PostCard';
+import PostCard from '../components/PostCard/PostCard';
 import {useInfiniteQuery} from '@tanstack/react-query'
+import { useSession } from "next-auth/react"
+import React ,{useEffect} from 'react';
 import { useInView  } from 'react-intersection-observer';
 
-import { useSession } from "next-auth/react"
-import React, { useEffect } from 'react';
+import { redirect } from 'next/navigation'
 
 
 
 
+export default function page() {
 
-export default function Home() {
-
-  const { data: session, update } = useSession();
-
-
-
+  const {data : user } = useSession()
   const {ref,inView} = useInView()
 
   const {isLoading,isError,data,error,isFetchingNextPage,fetchNextPage,hasNextPage} = useInfiniteQuery(['posts'] , async({pageParam = ''}) => {
-    const res= await fetch(`/api/posts/getAllPosts?cursor=${pageParam}`);
+    const res= await fetch(`/api/posts/getFollowingPosts?cursor=${pageParam}`);
     return res.json()
   } , {
     getNextPageParam : (latPage) => latPage.nextId ?? false,
@@ -33,11 +30,14 @@ export default function Home() {
     }
   },[inView])
 
+  if(!user?.user) {
+    redirect('/')
+  }
   
   return (
     <>
     <title>Blogna</title>
-    <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexWrap:"wrap",gap:"1rem"}}>
+    <Flex wrap={"wrap"} justify={"center"} align={"center"} gap={"md"} >
       {
         data && data.pages.map((page) => (
           <React.Fragment key={page.nextId ?? 'latPage'}>
@@ -47,17 +47,15 @@ export default function Home() {
                   Comments={post.Comment} Likes={post.Likes} userId={post.userId} queryKey={"posts"}/>
 
                 ))
-                
             }
-              <span ref={ref} style={{visibility:"hidden"}}>incree the data</span>
+          <span ref={ref} style={{visibility:"hidden"}}>incree the data</span>
+
        
           </React.Fragment>
         ))
       }
      
-    </div>
-
- 
+    </Flex>
       
       </>
   );

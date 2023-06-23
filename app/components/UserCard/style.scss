@@ -1,0 +1,125 @@
+.card {
+     margin:3rem 0 0 0;
+     position:relative;
+     width:350px;
+     height:450px;  
+     background-color:#000;
+     border-radius:20px;
+     box-shadow:0 35px 80px rgba(0,0,0,0.15);
+     transition:.5s;
+     margin-bottom:3rem;
+     box-shadow: 0px 0px 15px 1px #FB2576;
+     @media (max-width : 500px) {
+          width:300px;
+     }
+     @media (max-width : 290px) {
+          inline-size: 260px;
+  
+    overflow-wrap: break-word;
+     }
+
+    .imgBx {
+     position:absolute;
+     left:50%;
+     top:-50px;
+     transform:translateX(-50%);
+     width:200px;
+     height:250px;
+     background-color:#fff;
+     border-radius:20px;
+     box-shadow:0 5px 20px rgba(255,255,255,0.35);
+     overflow:hidden;
+     img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+     }
+    }
+    .contnet {
+     position:absolute;
+     width:100%;
+     height:100%;
+     display:flex;
+     justify-content:center;
+   align-items:flex-end;
+   .details {
+     padding:20px;
+     text-align:center;
+     width:100%;
+     transition:.5s;
+     h2 {
+          font-size:1.25em;
+          font-weight:600;
+          line-height:1.2em;
+          color:#f7f7f7f7;
+     }
+   }
+   .data {
+     display:flex;
+     justify-content:space-between;
+     margin:20px 0;
+     h3 {
+        font-size:1em;  
+        color:#f7f7f7f7;
+        line-height:1.2em;
+        font-weight:600;
+          span {
+               font-size:.85em;  
+               font-weight:400;
+               opacity:.8;
+  
+          }
+
+     }
+   }
+   .actionBtn {
+     display:flex;
+     justify-content:center;
+     align-items:center;
+     gap:1rem;
+     flex-wrap:wrap;
+     button {
+          padding:10px 15px ;
+          border-radius:5px;
+          border:none;
+               outline:none;
+               font-size:.8em;
+               font-weight:500;
+               background:#FB2576;
+               color:#fff;
+               transition:.5s;
+               cursor:pointer;
+               &:hover {
+                    color:#ffffff98; 
+               }
+               
+              
+     }
+     .followBtn{
+          &::disabled{
+               opacity:0.5 ;
+          }
+     }
+
+     .Link {
+          padding:10px 15px ;
+          border-radius:5px;
+          border:none;
+               outline:none;
+               font-size:.8em;
+               font-weight:500;
+               background:#FB2576;
+               color:#fff;
+               transition:.5s;
+               cursor:pointer;
+               &:hover {
+                    color:#ffffff98; 
+               } 
+     }
+   }
+    }
+
+}

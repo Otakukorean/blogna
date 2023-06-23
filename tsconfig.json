@@ -23,6 +23,10 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/LinksMenu/LinksMenu.jsx", "pages/api/auth/[...nextauth].js", "pages/api/Likes/Like.js", "app/components/actions/getCurrentUset.js", "pages/api/Comments/DeleteComment/[id].js", "pages/api/Comments/CreateComment/[id].js", "pages/api/Notifications/getAllNotifications.js"],
+  "exclude": ["node_modules"],
+  "typeRoots": [
+    "../node_modules/@types",
+    "./app/@types/alltypes.d.ts"
+  ]
 }

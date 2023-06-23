@@ -1,0 +1,130 @@
+
+
+.PostsContainer {
+     margin:1rem auto;
+     position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  gap:1rem;
+  flex-wrap:wrap;
+   @media (min-width: 1206px){
+    max-width: 1500px;
+     }  
+}
+.FirstCard {
+     width: 20rem;
+ height: 30rem;
+ background-image: linear-gradient(163deg, #FB2576 0%, #3F0071 100%);
+ border-radius: 20px;
+ transition: all .3s;
+
+
+ &:hover {
+  box-shadow: 0px 0px 30px 1px rgba(43, 0, 255, 0.3);
+ }
+
+ @media (max-width: 280px){
+  width: 15rem;
+ height: 30rem;
+     } 
+}
+.SecondCard {
+     width: 20rem;
+ height: 30rem;
+ position:relative;
+ background-color: rgb(21, 0, 80);
+ overflow-y:hidden;
+ border-radius: 15px;
+ transition: all .2s;
+ &:hover {
+  transform: scale(0.98);
+ border-radius: 20px;
+ }
+ @media (max-width: 280px){
+  width: 15rem;
+ height: 30rem;
+     }  
+}
+.UserDetails{
+     display:flex;
+     flex-direction:row;
+     color:#fff;
+     align-items: center; 
+     padding: 10px 24px;  
+}
+.UserImage{
+     padding:0 5px 0 0 ;
+
+}
+.User-Name span{
+     font-size:14px;
+
+}
+.Date span {
+     font-size:14px;
+ 
+}
+.Title-Container{
+     overflow: hidden;
+     min-width: 100%;
+     padding: 0.5em 0.25em;
+     line-height: 1;
+     text-align:center;
+     margin-bottom:1rem; 
+     
+     span{
+          margin-bottom: 10px;
+          font-size: 22px;
+          color:#fff;
+           padding:4px;
+           border-radius:13px;
+      
+           background-color:#FB2576;
+     }
+}
+.Body{
+     font-size: 14px;
+     line-height: 19.6px;
+     max-height: 58.8px;
+     overflow: hidden;
+     word-wrap: break-word;
+     filter:brightness(80%);
+     color:#fff;
+     padding:0 10px;
+     text-align:center;
+     img {
+       display:none;
+     }
+     &::after {
+       content:"...";
+     }
+}
+.IMages img {
+     height:200px; 
+     width:100%;
+   
+    border-radius:5px;
+}
+.Like-Comment-Container{
+     position:absolute;
+bottom:10px;
+  padding:10px 24px;
+  display:flex;
+    align-items:center;
+  justify-content: center;
+    gap:2rem;
+}
+.Like-Container span{
+     display:flex;
+     align-items:center;
+     gap:.5rem; 
+     color:#fff;
+}
+.Comment-Container {
+     display:flex;
+     align-items:center;
+     color:#fff;
+      gap:.5rem; 
+      cursor: pointer;
+}

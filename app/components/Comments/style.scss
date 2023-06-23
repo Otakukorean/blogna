@@ -1,0 +1,141 @@
+.container {
+     width: min(99%,1140px);
+     margin: 3rem auto;
+     word-wrap: break-word;
+ }
+ .comment_container {
+   position: relative;
+ }
+ .comment_container::before{
+   content: "";
+   background: #fff;
+   position: absolute;
+   min-height: 100%;
+   width: 1px;
+   left: -10px;
+ 
+ }
+ 
+ .comment_container:not(:first-child) {
+   margin: 1rem 0 0 0.5rem;
+ }
+ .comment__card {
+   padding: 20px;
+   background-color: #000;
+   color: #000;
+   border: 2px solid rgba(0, 0, 0, 0.4);
+   border-radius: .5rem;
+   min-width: 100%;
+   margin-bottom: 1rem;
+   color: #fff !important;
+   
+ }
+ .comment__card h3 , .comment__card p {
+   margin-bottom: 1rem;
+ 
+ }
+ .comment__footer {
+   display: flex;
+   font-size: .85rem;
+   opacity: .6;
+   gap: 30px;
+   justify-content: flex-end;
+   align-items: center;
+ }
+ .comment-action {
+   cursor: pointer;
+ }
+ 
+ .Form-container
+ {
+     width: 600px;
+    
+     padding: 30px 20px;
+     margin: 0 auto;
+     background: #000;
+     border-radius: 15px;
+     
+ }
+ 
+ .Form-container h2
+ {
+     text-align: center;
+     margin-bottom: 15px;
+     color:#000;
+     
+ }
+ textarea
+ {
+     height: 30px;
+     width: 100%;
+     border: none;
+     border-bottom: 2px solid #aaa;
+     background-color: transparent;
+     margin-bottom: 10px;
+     resize: none;
+     outline: none;
+     transition: .5s;
+     color:#fff;
+     
+ }
+ 
+ 
+ input[type="submit"], button
+ {
+     padding: 10px 15px;
+     border: none;
+     outline: none;
+     border-radius: 5px;
+     text-transform: uppercase;
+     font-weight: bold;
+     cursor: pointer;
+ }
+ input[type="submit"]
+ {
+     color: #fff;
+     background-color: #FB2576
+ }
+ #clear
+ {
+     color: #333;
+     background-color: transparent
+ }
+ .btn {
+  display: flex;
+  gap: 1rem;
+ }
+ 
+ 
+ @media (max-width : 767px) {
+   .Form-container {
+     width: 500px;
+   }
+   .container {
+     width: min(70%,1140px);
+     margin: 3rem auto;
+ }
+ 
+ }
+ @media (max-width : 400px) {
+   .Form-container {
+     width: 300px;
+   }
+   .container {
+     width: min(95%,1140px);
+     margin: 3rem auto;
+ }
+ 
+ }
+ @media (max-width : 300px) {
+   .Form-container {
+     width: 250px;
+   }
+   .container {
+     width: min(50%,1140px);
+     margin: 3rem auto;
+ }
+ 
+ }
+ 
+ 
+ 
