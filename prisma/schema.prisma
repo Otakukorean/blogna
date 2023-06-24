@@ -4,7 +4,7 @@ generator client {
 }
 
 datasource db {
-  provider             = "mysql"
+  provider             = "postgres"
   url                  = env("DATABASE_URL")
 
 }
@@ -73,7 +73,7 @@ model Post {
   id           String         @id @default(cuid())
   title        String         @db.VarChar(255)
   createdAt    DateTime       @default(now()) @db.Timestamp(6)
-  content      String         @db.LongText
+  content      String         @db.Text
   image        String
   userId       String
   user         User           @relation(fields: [userId], references: [id])
