@@ -25,7 +25,7 @@ const Conatiner = ({children} : Props): any =>{
    
      return (
           <>
-          <SessionProvider>
+          <SessionProvider >
                <QueryClientProvider client={queryClient}>
           <MantineProvider withGlobalStyles withNormalizeCSS theme={{
            colorScheme :"dark" ,
