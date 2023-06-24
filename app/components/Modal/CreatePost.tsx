@@ -14,8 +14,22 @@ import { File } from 'buffer';
 import {  toast } from 'react-toastify';
 
 
-const MyEditor = dynamic(() => import('../Editor/MyEditor'),{ssr:false})
-
+// const MyEditor = dynamic(() => import('../Editor/MyEditor'),{ssr:false})
+const MyEditor = dynamic(
+  () =>
+    import("../Editor/MyEditor").then(
+      (mod) =>
+        mod.default as unknown as React.FC<
+          {
+            editorState: any;
+            wrapperClassName: string;
+            editorClassName: string;
+            editorStateChange: any;
+          }
+        >
+    ),
+  { ssr: false }
+);
 interface PageProps {
   close : () => void
 }
