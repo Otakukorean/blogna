@@ -17,14 +17,7 @@ import {  toast } from 'react-toastify';
 // const MyEditor = dynamic(() => import('../Editor/MyEditor'),{ssr:false})
 const MyEditor = dynamic(
   () =>
-    import("../Editor/MyEditor").then(
-      (mod) =>
-        mod.default as unknown as React.FC<
-          {
-           setData : any
-          }
-        >
-    ),
+    import("../Editor/MyEditor"),
   { ssr: false }
 );
 interface PageProps {
@@ -144,7 +137,7 @@ getFile(e)
 
                {file == null ? null :  <Image maw={240} mx="auto" radius="md" src={file} alt="Random image" mb={30} />} 
    
-      {/* <MyEditor  setData={setData}   /> */}
+      <MyEditor  setData={setData}   />
       <Center mt={20}>
       <Button onClick={onSubmit} disabled={disabeld}  styles={{'root':{background:"#FB2576" ,transition:"all .2s ease",':hover ':{background:"#FB2576",opacity:.7},':disabled':{opacity:0.7}}}} >انشاء</Button>
 
