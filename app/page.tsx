@@ -3,7 +3,6 @@ import { Flex } from '@mantine/core';
 
 import PostCard from './components/PostCard/PostCard';
 import {useInfiniteQuery} from '@tanstack/react-query'
-import { useInView  } from 'react-intersection-observer';
 
 import { useSession } from "next-auth/react"
 import React, { useEffect } from 'react';
@@ -18,7 +17,6 @@ export default function Home() {
 
 
 
-  const {ref,inView} = useInView()
 
   const {isLoading,isError,data,error,isFetchingNextPage,fetchNextPage,hasNextPage} = useInfiniteQuery(['posts'] , async({pageParam = ''}) => {
     const res= await fetch(`/api/posts/getAllPosts?cursor=${pageParam}`);
@@ -27,11 +25,6 @@ export default function Home() {
     getNextPageParam : (latPage) => latPage.nextId ?? false,
   })
 
-  useEffect(() => {
-    if(inView && hasNextPage) {
-      fetchNextPage()
-    }
-  },[inView])
 
   
   return (
@@ -49,7 +42,6 @@ export default function Home() {
                 ))
                 
             }
-              <span ref={ref} style={{visibility:"hidden"}}>incree the data</span>
        
           </React.Fragment>
         ))

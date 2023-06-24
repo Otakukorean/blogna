@@ -5,7 +5,6 @@ import PostCard from '../components/PostCard/PostCard';
 import {useInfiniteQuery} from '@tanstack/react-query'
 import { useSession } from "next-auth/react"
 import React ,{useEffect} from 'react';
-import { useInView  } from 'react-intersection-observer';
 
 import { redirect } from 'next/navigation'
 
@@ -15,8 +14,6 @@ import { redirect } from 'next/navigation'
 export default function page() {
 
   const {data : user } = useSession()
-  const {ref,inView} = useInView()
-
   const {isLoading,isError,data,error,isFetchingNextPage,fetchNextPage,hasNextPage} = useInfiniteQuery(['posts'] , async({pageParam = ''}) => {
     const res= await fetch(`/api/posts/getFollowingPosts?cursor=${pageParam}`);
     return res.json()
@@ -24,15 +21,15 @@ export default function page() {
     getNextPageParam : (latPage) => latPage.nextId ?? false,
   })
 
-  useEffect(() => {
-    if(inView && hasNextPage) {
-      fetchNextPage()
-    }
-  },[inView])
+  // useEffect(() => {
+  //   if(inView && hasNextPage) {
+  //     fetchNextPage()
+  //   }
+  // },[inView])
 
-  if(!user?.user) {
-    redirect('/')
-  }
+  // if(!user?.user) {
+  //   redirect('/')
+  // }
   
   return (
     <>
@@ -48,7 +45,6 @@ export default function page() {
 
                 ))
             }
-          <span ref={ref} style={{visibility:"hidden"}}>incree the data</span>
 
        
           </React.Fragment>
