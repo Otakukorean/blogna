@@ -21,10 +21,7 @@ const MyEditor = dynamic(
       (mod) =>
         mod.default as unknown as React.FC<
           {
-            editorState: any;
-            wrapperClassName: string;
-            editorClassName: string;
-            editorStateChange: any;
+           setData : any
           }
         >
     ),
