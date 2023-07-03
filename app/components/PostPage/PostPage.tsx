@@ -5,7 +5,6 @@ import CommentForm from '../Comments/CommentForm'
 import React  ,{Dispatch, SetStateAction, useState} from 'react'
 import { Center , Flex ,Group,Text,TypographyStylesProvider } from '@mantine/core'
 import UserCard from '../UserCard/UserCard';
-import axios from 'axios';
 interface PageParams {
      postId : string;
      Post : {
@@ -45,11 +44,6 @@ interface PageParams {
      setActiveComment : Dispatch<SetStateAction<string | null>>
 
 }
-enum Role {
-     CEO ,
-     ADMIN,
-     USER
-   }
 
 
 
@@ -72,7 +66,7 @@ const PostPage : React.FC<PageParams> = ( {
      <Flex direction={'column'} justify={'center'} align={'center'} >
           <UserCard user={Post.user} queryKey="detail-post" isProfilePage={false} />
           <Group mb={30} bg={'#150050'} style={{borderRadius:"10px",display:"flex",flexDirection:"column",justifyContent:"center" ,alignItems:"center"}} p={20}  >
-          <Text size={'1.7em'} color='#fff' p={'4px'} bg={'#FB2576'} style={{borderRadius:"10px"}}>Black Clover</Text>
+          <Text size={'1.7em'} color='#fff' p={'4px'} bg={'#FB2576'} style={{borderRadius:"10px"}}>{Post.title}</Text>
           
           <TypographyStylesProvider  >
                <div style={{color:"#fff",textAlign:"center",fontSize:"14px",overflow:"hidden"}} dangerouslySetInnerHTML={{__html : Post.content}}/>

@@ -29,7 +29,8 @@ export default function Home() {
   
   return (
     <>
-    <title>Blogna</title>
+    <title>Blogna  - بلوجنا</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <div style={{display:"flex",justifyContent:"center",alignItems:"center",flexWrap:"wrap",gap:"1rem"}}>
       {
         data && data.pages.map((page) => (

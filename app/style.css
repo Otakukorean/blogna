@@ -70,4 +70,11 @@ label {
 .mantine-4wjohz,  .mantine-PasswordInput-innerInput  {
      color: #fff !important;
 }
+.rdw-image-modal-url-input , .rdw-image-modal-size-input ,.rdw-embedded-modal-link-input , .rdw-embedded-modal-size-input {
+     background-color: #fff !important;
+     color: #000;
+}
+.rdw-image-modal-btn:disabled , .rdw-image-modal-btn , .rdw-embedded-modal-btn:disabled , .rdw-embedded-modal-btn {
+     color: #000;
+}
  

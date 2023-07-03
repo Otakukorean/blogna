@@ -96,7 +96,10 @@ const [isSearchOpen , setisSearchOpen] = useState(false)
     <Header height={HEADER_HEIGHT} sx={{ borderBottom: 0 }} mb={30}>
       <Container className={classes.inner} fluid>
         <Group>
-          <Text color='#fff' >Blogna</Text>
+          <Link href={'/'}>
+          <Image alt='' src={'/android-chrome-512x512.png'} width={50} height={50} style={{borderRadius:"90%", objectFit:"cover"}} />
+
+          </Link>
         </Group>
         <Menu>
       <Flex justify={'center'} align={'center'} gap={'xl'}>

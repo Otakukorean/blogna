@@ -71,8 +71,8 @@ export const authOption  =   {
                               }
                          })
                          session.user['id']=users.id
+                         session.user['roll'] = users.roll
                       }
-                      console.log(session?.user);
                       return session;
                     },
        },

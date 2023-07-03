@@ -75,8 +75,16 @@ const Notifications = () => {
      </div>
       <Modal size={matches ? 'auto' : 'lg'}   opened={opened} onClose={close}  scrollAreaComponent={ScrollArea.Autosize} >
           <Paper bg={"#222"} radius="md"   >
-               <Text align='center' size={'1.5rem'}  color="#fff">الاشعارات</Text> <br />
-               {data?.map((not : any,key : any) =>(
+               <Text align='center' size={'1.5rem'} mb={40}  color="#fff">الاشعارات</Text> <br />
+               {
+                data?.length === 0 ? (
+                  
+                  <Text align='center' size={'1.5rem'} pb={50} color="#fff">لاتوجد اشعارات</Text> 
+
+                )
+                : (
+                  <>
+                           { data?.map((not : any,key : any) =>(
                       <Link onClick={() => notificationOnclick(not.postId ,not.type )} style={{marginBottom:"1rem"}}  href={not.type !== 'FOLLOW' ? `/post/${not?.post.user?.name}/${not?.post?.id}` : `/profile/${not?.sender?.name}/${not?.sender?.id}`} key={key} >
                       <Container  className='Notification_Container' mb={30}>
                       <Flex  p={5}  style={{gap:"1rem",cursor:"pointer"}} justify={'space-around'} align={'center'}  >
@@ -169,6 +177,11 @@ const Notifications = () => {
                            </Container>
                  </Link>
                ) )}
+                  </>
+                )
+     
+
+               }
              
          
           </Paper>

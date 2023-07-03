@@ -1,6 +1,6 @@
 import {getServerSession} from 'next-auth/next'
-import { authOption } from "../../auth/[...nextauth]"
-import client from '../../../../app/libs/prismaDb.ts';
+import { authOption } from "../../../auth/[...nextauth]"
+import client from '../../../../../app/libs/prismaDb';
 export default async function handler(req,res) {
      if(req.method === "DELETE" ) {
       
@@ -12,16 +12,21 @@ export default async function handler(req,res) {
           where : {email : session?.user?.email  }   
         })
 
-
+        
+               
                // Get Post By ID
                try {
-                    const result = await client.post.deleteMany({
-                         where : {
-                              id : req.query.id  ,
-                              userId :prismaUser.id
-                         }
-                    })
-                    res.status(200).json(result)
+
+                    if(prismaUser.roll === 'ADMIN' || prismaUser.roll === 'CEO' || session.user.id === req.query.userId   ) {
+                         const result = await client.post.deleteMany({
+                              where : {
+                                   id : req.query.id  
+                              }
+                         })
+                         res.status(200).json(result)
+                    }
+
+                    
                } catch (error) {
                          res.status(403).json({err : error.message})
                }

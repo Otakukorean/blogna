@@ -33,7 +33,8 @@ export default function page() {
   
   return (
     <>
-    <title>Blogna</title>
+    <title>المتابعين</title>
+    <meta name="robots" content="noindex"/>
     <Flex wrap={"wrap"} justify={"center"} align={"center"} gap={"md"} >
       {
         data && data.pages.map((page) => (

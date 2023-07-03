@@ -1,5 +1,4 @@
-import { tuple, z } from 'zod';
-import { zodResolver } from "@hookform/resolvers/zod";
+
 import {
   TextInput,
   PasswordInput,
@@ -22,11 +21,7 @@ import {  toast } from 'react-toastify';
 import Image from 'next/image';
 import { useRouter } from "next/navigation";
 
-const registerschema = z.object({
-  name: z.string().min(2, { message: 'Name should have at least 2 letters' }),
-  email: z.string().email({ message: 'Invalid email' }).nonempty({message :'هذا الحقل مطلوب'}),
-  password: z.string().min(8, { message: 'كلمة المرور صغيرة للغاية' }).max(255,{message : 'كلمة المرور كبيرة للغاية'}).nonempty({message :'هذا الحقل مطلوب'}),
-});
+
 
 interface PageProps {
   queryKey : string;
@@ -150,7 +145,7 @@ export function EditUserModal(props : PageProps) {
     } >
       <Center mb={30} >
         <Flex direction={'column'} align={'center'} justify={'center'}>
-      <Image src={!file ? data?.user?.image as string : `${file}`} width={150} height={150}  alt='' style={{width :"150px" ,height:"150px",marginBottom:"20px",borderRadius:"100%",objectFit:"cover"}} />
+      <Image src={!file ? 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/434px-Unknown_person.jpg' : `${file}`} width={150} height={150}  alt='' style={{width :"150px" ,height:"150px",marginBottom:"20px",borderRadius:"100%",objectFit:"cover"}} />
 
       <label htmlFor="images" className="drop-container">
   <span className="drop-title">Drop files here</span>

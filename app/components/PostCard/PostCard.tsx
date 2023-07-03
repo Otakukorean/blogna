@@ -46,8 +46,7 @@ const PostCard = (prop : PostCard) => {
     return like.postId === prop.id && like.userId === user?.user?.id
   })
 
-  const canEdit = user?.user.id === prop.userId ;
-  const canDelete = user?.user.id === prop.userId ;
+  const canDelete = user?.user.id === prop.userId || user?.user?.roll ==="ADMIN" || user?.user?.roll ==='CEO' ;
 
   const addLike = () => {
     if(!user?.user) {
@@ -58,6 +57,7 @@ const PostCard = (prop : PostCard) => {
     }
   }
 
+  console.log(user);
   
   return (
     <div className='PostsContainer' style={{transition:"ease-in .2s"}}>
@@ -108,7 +108,7 @@ const PostCard = (prop : PostCard) => {
           {canDelete && (
           <div className="Comment-Container">
       
-            <DeleteModal url={`/api/posts/DeletePost/${prop.id}`} Querykey={prop.queryKey} type='post' children={
+            <DeleteModal url={`/api/posts/DeletePost/${prop.id}/${prop.userId}`} Querykey={prop.queryKey} type='post' children={
                        <BsFillTrashFill  size={25} color='#FB2576'
                        title='حذف'
                      />

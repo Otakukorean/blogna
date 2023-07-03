@@ -26,7 +26,9 @@ export default function page() {
   
   return (
     <>
-    <title>Blogna</title>
+    <title>احدث المنشورات</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
     <Flex wrap={"wrap"} justify={"center"} align={"center"} gap={"md"} >
       {
         data && data.pages.map((page) => (

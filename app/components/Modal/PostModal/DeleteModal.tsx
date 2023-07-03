@@ -8,7 +8,7 @@ interface PageProps {
      type : string ;
      url : string ;
      Querykey : string ;
-     children : React.ReactNode
+     children : React.ReactNode ;
 }
 
 const DeleteModal = (props : PageProps) => {

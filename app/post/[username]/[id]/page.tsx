@@ -19,9 +19,9 @@ const getPostById = async (id : string) => {
 }
 
 const page = (params : PageParams) => {
-
-  const [activecomment,setActiveComment] = useState<string | null>(null)
   const {data : user  } = useSession()
+  const [activecomment,setActiveComment] = useState<string | null>(null)
+
   const {data  ,error,isLoading} = useQuery({queryFn : () => getPostById(params.params.id) , queryKey : ['detail-post']})
   const queryClient = useQueryClient()
 
@@ -48,7 +48,6 @@ const page = (params : PageParams) => {
 
   
  
-    console.log(data);
     
     
 
@@ -57,6 +56,8 @@ const page = (params : PageParams) => {
   return (
     <>
     <title>{data.title}</title>
+    <meta name="twitter:card" content={`${data.title}`}/>
+    <meta name="og:title" property="og:title" content={`${data.title}`} />
     <div>
       <PostPage Post={data} postId={params.params.id} activecomment={activecomment} setActiveComment={setActiveComment}   />
     </div>
