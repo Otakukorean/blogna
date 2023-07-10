@@ -3,11 +3,9 @@ import React from 'react'
 import {AiOutlineHome , AiOutlineClockCircle,AiOutlineInfoCircle,AiOutlineAlignLeft} from 'react-icons/ai'
 import Link from 'next/link' 
 import { usePathname } from "next/navigation";
-import { Swiper, SwiperSlide } from 'swiper/react';
+
 import Carousel from "react-elastic-carousel";
 
-// Import Swiper styles
-import 'swiper/css';
 const LinksMenu = () => {
      const Data = [
           {

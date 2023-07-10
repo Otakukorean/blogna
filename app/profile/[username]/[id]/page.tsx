@@ -46,10 +46,11 @@ const page = ({params} : PageParams) => {
 
   
 
+ 
   
   return (
     <>
-    <title>{params.username}</title>
+    <title>{userData?.name}</title>
     <div >
       <Center style={{display:"flex" ,justifyContent:"center" ,alignItems:"center" , flexDirection:"column"}}>
         <UserCard user={userData} queryKey='UserProfile' isProfilePage />
