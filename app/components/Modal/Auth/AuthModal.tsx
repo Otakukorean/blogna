@@ -25,8 +25,8 @@ import { useState } from 'react';
 import {  toast } from 'react-toastify';
 
 const registerschema = z.object({
-  name: z.string().min(2, { message: 'Name should have at least 2 letters' }),
-  email: z.string().email({ message: 'Invalid email' }).nonempty({message :'هذا الحقل مطلوب'}),
+  name: z.string().min(3, { message: 'الاسم لايجب ان يقل عن 3 احرف' }),
+  email: z.string().email({ message: 'البريد الالكتروني غير صالح' }).nonempty({message :'هذا الحقل مطلوب'}),
   password: z.string().min(8, { message: 'كلمة المرور صغيرة للغاية' }).max(255,{message : 'كلمة المرور كبيرة للغاية'}).nonempty({message :'هذا الحقل مطلوب'}),
 });
 const Loginschema = z.object({
@@ -111,10 +111,13 @@ export function AuthModal() {
                 
                    {...(register('name', { required: true }))}
                  />
+                 <span style={{fontSize:".7rem",color:"#FB2576"}} >
                  {errors.name && 
                    `${errors.name?.message}` 
                 
                  }
+                 </span>
+                 
             
             </>
           
@@ -130,10 +133,12 @@ export function AuthModal() {
          
             {...(register('email', { required: true }))}
           />
-             {errors.name && 
+              <span style={{fontSize:".7rem",color:"#FB2576"}} >
+                 {errors.name && 
                    `${errors.email?.message}` 
                 
                  }
+                 </span>
 
           <PasswordInput
                styles={{'input':{background:"transparent",color:"#fff !important",':focus' : {border : '1px solid #fff'}},'label':{marginBottom:'10px'}}}
@@ -143,10 +148,12 @@ export function AuthModal() {
             radius="md"
        
           />
-            {errors.name && 
+             <span style={{fontSize:".7rem",color:"#FB2576"}} >
+                 {errors.name && 
                    `${errors.password?.message}` 
                 
                  }
+                 </span>
 
     
         </Stack>
