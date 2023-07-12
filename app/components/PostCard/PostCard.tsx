@@ -15,6 +15,7 @@ import axios from 'axios'
 import { modals } from '@mantine/modals';
 import DeleteModal from '../Modal/PostModal/DeleteModal'
 import {  toast } from 'react-toastify';
+import Image from 'next/image'
 
 const PostCard = (prop : PostCard) => {
 
@@ -64,7 +65,7 @@ const PostCard = (prop : PostCard) => {
       <div className="FirstCard">
           <div className="SecondCard">
           <Link href={`/post/${prop.user.name}/${prop.id}`}>
-          <img src={`/Upload/${prop.postImage}`} style={{width:"100%",height:"200px",objectFit:"cover"}} width={400} height={400} alt='dd'/>
+          <Image src={`/Upload/${prop.postImage}`} style={{width:"100%",height:"200px",objectFit:"cover"}} width={400} height={400} alt='dd'/>
           
           <Group spacing="sm" mt={20} ml={20} mb={20}>
           <Avatar size={40} src={prop.user?.image === null ? "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/434px-Unknown_person.jpg" : `${prop.user?.image}`}radius={40} />
