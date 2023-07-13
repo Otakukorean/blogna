@@ -68,17 +68,12 @@ const PostPage : React.FC<PageParams> = ( {
           <Group mb={30} bg={'#150050'} style={{borderRadius:"10px",display:"flex",flexDirection:"column",justifyContent:"center" ,alignItems:"center" }} p={20} >
           <Text size={'1.7em'} color='#fff' p={'4px'} bg={'#FB2576'} style={{borderRadius:"10px"}}>{Post.title}</Text>
           
-     
-               <div className="Body" dangerouslySetInnerHTML={{__html :Post.content }}/>
-       
+               <TypographyStylesProvider>
+               <div className="Body" dangerouslySetInnerHTML={{__html :Post?.content }}/>
+               </TypographyStylesProvider>
           <Text mb={20} size={'1.7em'} color='#fff' p={'4px'} bg={'#FB2576'} style={{borderRadius:"10px"}}>التعليقات</Text>
-          <div>
-          <CommentForm submitLabel="تعليق" hasCancelButton={false} setActiveComment={setActiveComment} activeComment={activecomment} postid={postId}  />
-
-          </div>
         
-
-
+          <CommentForm submitLabel="تعليق" hasCancelButton={false} setActiveComment={setActiveComment} activeComment={activecomment} postid={postId}  />
           {Post?.Comment.filter((com : any) => com.parent_id === null).map((comment :any) => (
      
      <Coment postId={postId} comment={comment} currentUserId={user?.user?.id} replies={Post?.Comment.filter((reply : any) => reply.parent_id === comment.id)} data={Post} activeComment={activecomment} setActiveComment={setActiveComment} />
