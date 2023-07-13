@@ -77,34 +77,3 @@ label {
 .rdw-image-modal-btn:disabled , .rdw-image-modal-btn , .rdw-embedded-modal-btn:disabled , .rdw-embedded-modal-btn {
      color: #000;
 }
-.Body {
-     display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-     text-align:center;
-     line-height:3;
-     color:#fff;
-}
-.Body img {
-     width:100%;
-     object-fit: cover;
-
-}
-@media (max-width : 767px) {
-     .Body {
-          inline-size: 350px;
-
-          overflow-wrap: break-word;
-     }
-
-}
-@media (max-width : 290px) {
-     .Body {
-          inline-size: 260px;
-
-          overflow-wrap: break-word;
-     }
-
-}
- 
