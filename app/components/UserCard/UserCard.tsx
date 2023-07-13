@@ -8,6 +8,7 @@ import {BsPen} from 'react-icons/bs'
 import { useDisclosure } from '@mantine/hooks';
 import { Modal } from '@mantine/core'
 import { EditUserModal } from '../Modal/Auth/EditUserModal'
+import Image from 'next/image'
 
 interface UserProps {
   user : {
@@ -57,7 +58,7 @@ const UserCard :React.FC<UserProps> = ({user,queryKey,isProfilePage}) => {
     <>
     <div className='card'>
       <div className='imgBx'>
-          <img src={user?.image === null ? "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/434px-Unknown_person.jpg" : `${user?.image}`} alt="" />
+          <Image src={user?.image === null ? "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/434px-Unknown_person.jpg" : `${user?.image}`} alt="" width={100} height={100} />
           </div>    
           <div className="contnet">
                <div className="details">

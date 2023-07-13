@@ -116,7 +116,7 @@ const [isSearchOpen , setisSearchOpen] = useState(false)
       ) : null}
       {data?.user ? (
          <Menu.Target>
-         <img  style={{cursor:"pointer",width:"40px",height:"40px",borderRadius:"100%",objectFit:"cover"}} alt='' width={40} height={40}  src={data?.user?.image === null ? "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/434px-Unknown_person.jpg" : `${data?.user?.image}`}  />
+         <Image  style={{cursor:"pointer",width:"40px",height:"40px",borderRadius:"100%",objectFit:"cover"}} alt='' width={40} height={40}  src={data?.user?.image === null ? "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Unknown_person.jpg/434px-Unknown_person.jpg" : `${data?.user?.image}`}  />
      
            </Menu.Target>
       ) :   <LoginButton/> }
