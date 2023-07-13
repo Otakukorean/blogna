@@ -68,9 +68,9 @@ const PostPage : React.FC<PageParams> = ( {
           <Group mb={30} bg={'#150050'} style={{borderRadius:"10px",display:"flex",flexDirection:"column",justifyContent:"center" ,alignItems:"center" , maxWidth:"auto",padding:"5px"}}  >
           <Text size={'1.7em'} color='#fff' p={'4px'} bg={'#FB2576'} style={{borderRadius:"10px"}}>{Post.title}</Text>
           
-          <TypographyStylesProvider style={{wordWrap: "break-word",overflow:"hidden"}}  >
-               <div style={{color:"#fff",textAlign:"center",fontSize:"14px",overflow:"hidden",wordWrap: "break-word"}} dangerouslySetInnerHTML={{__html : Post.content}}/>
-          </TypographyStylesProvider>
+     
+               <div className="Body" dangerouslySetInnerHTML={{__html :Post.content }}/>
+       
           <Text mb={20} size={'1.7em'} color='#fff' p={'4px'} bg={'#FB2576'} style={{borderRadius:"10px"}}>التعليقات</Text>
           <CommentForm submitLabel="تعليق" hasCancelButton={false} setActiveComment={setActiveComment} activeComment={activecomment} postid={postId}  />
 
