@@ -84,6 +84,11 @@ align-items:center;
 flex-direction:column;
      text-align:center;
      line-height:3;
+     color:#fff;
+}
+.Body img {
+     width:100%;
+     object-fit: cover;
 
 }
 @media (max-width : 767px) {
