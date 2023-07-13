@@ -69,7 +69,7 @@ const PostPage : React.FC<PageParams> = ( {
           <Text size={'1.7em'} color='#fff' p={'4px'} bg={'#FB2576'} style={{borderRadius:"10px"}}>{Post.title}</Text>
           
           <TypographyStylesProvider  >
-               <div style={{color:"#fff",textAlign:"center",fontSize:"14px",overflow:"hidden"}} dangerouslySetInnerHTML={{__html : Post.content}}/>
+               <div style={{color:"#fff",textAlign:"center",fontSize:"14px",overflow:"hidden",maxWidth:"800px"}} dangerouslySetInnerHTML={{__html : Post.content}}/>
           </TypographyStylesProvider>
           <Text mb={20} size={'1.7em'} color='#fff' p={'4px'} bg={'#FB2576'} style={{borderRadius:"10px"}}>التعليقات</Text>
           <CommentForm submitLabel="تعليق" hasCancelButton={false} setActiveComment={setActiveComment} activeComment={activecomment} postid={postId}  />
