@@ -65,7 +65,7 @@ const PostPage : React.FC<PageParams> = ( {
     <Center   style={{borderRadius:"10px",overflow:'hidden'}} m={30}  >
      <Flex direction={'column'} justify={'center'} align={'center'} >
           <UserCard user={Post.user} queryKey="detail-post" isProfilePage={false} />
-          <Group mb={30} bg={'#150050'} style={{borderRadius:"10px",display:"flex",flexDirection:"column",justifyContent:"center" ,alignItems:"center" , maxWidth:"auto",padding:"5px"}}  >
+          <Group mb={30} bg={'#150050'} style={{borderRadius:"10px",display:"flex",flexDirection:"column",justifyContent:"center" ,alignItems:"center" }} p={20} >
           <Text size={'1.7em'} color='#fff' p={'4px'} bg={'#FB2576'} style={{borderRadius:"10px"}}>{Post.title}</Text>
           
      
@@ -76,7 +76,7 @@ const PostPage : React.FC<PageParams> = ( {
           <CommentForm submitLabel="تعليق" hasCancelButton={false} setActiveComment={setActiveComment} activeComment={activecomment} postid={postId}  />
 
           </div>
-          <Group >
+        
 
 
           {Post?.Comment.filter((com : any) => com.parent_id === null).map((comment :any) => (
@@ -84,7 +84,7 @@ const PostPage : React.FC<PageParams> = ( {
      <Coment postId={postId} comment={comment} currentUserId={user?.user?.id} replies={Post?.Comment.filter((reply : any) => reply.parent_id === comment.id)} data={Post} activeComment={activecomment} setActiveComment={setActiveComment} />
  
           ))}
-          </Group>
+         
           </Group>
 
 
