@@ -72,6 +72,7 @@ const PostPage : React.FC<PageParams> = ( {
                <div className="Body" dangerouslySetInnerHTML={{__html :Post.content }}/>
        
           <Text mb={20} size={'1.7em'} color='#fff' p={'4px'} bg={'#FB2576'} style={{borderRadius:"10px"}}>التعليقات</Text>
+          <Group maw={'50%'} >
           <CommentForm submitLabel="تعليق" hasCancelButton={false} setActiveComment={setActiveComment} activeComment={activecomment} postid={postId}  />
 
           {Post?.Comment.filter((com : any) => com.parent_id === null).map((comment :any) => (
@@ -79,6 +80,7 @@ const PostPage : React.FC<PageParams> = ( {
      <Coment postId={postId} comment={comment} currentUserId={user?.user?.id} replies={Post?.Comment.filter((reply : any) => reply.parent_id === comment.id)} data={Post} activeComment={activecomment} setActiveComment={setActiveComment} />
  
           ))}
+          </Group>
           </Group>
 
 
