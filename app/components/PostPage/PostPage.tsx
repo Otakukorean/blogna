@@ -65,7 +65,7 @@ const PostPage : React.FC<PageParams> = ( {
     <Center   style={{borderRadius:"10px",overflow:'hidden'}} m={30}  >
      <Flex direction={'column'} justify={'center'} align={'center'} >
           <UserCard user={Post.user} queryKey="detail-post" isProfilePage={false} />
-          <Group mb={30} bg={'#150050'} style={{borderRadius:"10px",display:"flex",flexDirection:"column",justifyContent:"center" ,alignItems:"center"}} p={20}  >
+          <Group mb={30} bg={'#150050'} style={{borderRadius:"10px",display:"flex",flexDirection:"column",justifyContent:"center" ,alignItems:"center" , maxWidth:"auto",padding:"5px"}}  >
           <Text size={'1.7em'} color='#fff' p={'4px'} bg={'#FB2576'} style={{borderRadius:"10px"}}>{Post.title}</Text>
           
           <TypographyStylesProvider  >
