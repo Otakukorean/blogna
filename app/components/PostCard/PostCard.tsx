@@ -73,7 +73,7 @@ const PostCard = (prop : PostCard) => {
             <Text fz="sm" fw={500} color='#fff'>
               {prop.user.name}
             </Text>
-            <Text c="dimmed" fz="xs">
+            <Text c="#ffffff98" fz="xs">
             {
            formatDistance(
             new Date(`${prop.createdAt}`),
