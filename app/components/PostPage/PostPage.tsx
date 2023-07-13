@@ -76,7 +76,7 @@ const PostPage : React.FC<PageParams> = ( {
           <CommentForm submitLabel="تعليق" hasCancelButton={false} setActiveComment={setActiveComment} activeComment={activecomment} postid={postId}  />
 
           </div>
-          <Group maw={'50%'} >
+          <Group >
 
 
           {Post?.Comment.filter((com : any) => com.parent_id === null).map((comment :any) => (
