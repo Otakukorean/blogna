@@ -19,13 +19,32 @@ const getPostById = async (id : string) => {
 }
 
 const page = (params : PageParams) => {
- 
+  const {data : user  } = useSession()
   const [activecomment,setActiveComment] = useState<string | null>(null)
 
   const {data  ,error,isLoading} = useQuery({queryFn : () => getPostById(params.params.id) , queryKey : ['detail-post']})
+  const queryClient = useQueryClient()
 
+  const { mutate } = useMutation(
+    async (FollowingId : string) => {
+      return axios.post(`/api/follow/Follow` , {
+        followerId : user?.user?.id ,
+        followingId : FollowingId
+      })
+    },
+    {
+      onSuccess: (data) => {
+        queryClient.invalidateQueries(['detail-post'])
+    
 
-
+      },
+      onError: (error) => {
+      
+    
+      },
+    }
+  )
+  if(isLoading) return <h1>Loadin</h1>
 
   
  
